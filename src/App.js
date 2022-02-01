@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CharacterList from './Component/CharacterList/CharacterList';
+import CharacterDetail from './Views/CharacterDetail/CharacterDetail';
 import { useEffect, useState } from 'react';
 import './App.css';
 import { getCharacters } from './services/character';
@@ -25,6 +26,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
+          <Route exact path="/character/:id">
+            <CharacterDetail />
+          </Route>
           <Route exact path="/">
             <CharacterList character={character} />
           </Route>
