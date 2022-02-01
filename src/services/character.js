@@ -7,5 +7,5 @@ export async function getCharacters() {
 export async function getCharacterById(id) {
   const response = await fetch(`https://breakingbadapi.com/api/characters/${id}`);
   const characterData = await response.json();
-  return characterData;
+  return characterData[0];
 }

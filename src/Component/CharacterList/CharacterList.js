@@ -5,9 +5,9 @@ export default function CharacterList({ character }) {
   return (
     <div className="list">
       {character.map((char) => (
-        <p className="char" key={char.id}>
+        <p className="char" key={char.char_id}>
           {char.character}
-          <Link key={char.id} to={`character/${char.id}`}>
+          <Link key={char.char_id} to={`character/${char.char_id}`}>
             <img alt={char.name} src={char.img}></img>
           </Link>
           <p>Name: {char.name}</p>

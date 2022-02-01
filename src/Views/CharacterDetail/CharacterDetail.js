@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getCharacterById } from '../../services/character';
+import Character from '../../Component/Character/Character';
 
 export default function CharacterDetail() {
   const { id } = useParams();
@@ -21,7 +22,7 @@ export default function CharacterDetail() {
   return (
     <div className="detail">
       <div>
-        <Character {...character} />
+        <Character {...{ character }} />
       </div>
     </div>
   );
