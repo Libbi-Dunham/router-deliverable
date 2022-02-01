@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function CharacterList({ character }) {
-  console.log(character);
   return (
     <div className="list">
       {character.map((char) => (
