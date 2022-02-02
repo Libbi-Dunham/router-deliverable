@@ -20,3 +20,16 @@ test('renders the character list', async () => {
   const link = screen.getByRole('link', { name: /Marie/i });
   userEvent.click(link);
 });
+
+// test('renders the button', async () => {
+//   render(
+//     <MemoryRouter>
+//       <App />
+//       );
+//     </MemoryRouter>
+//   );
+
+//   const button = await screen.findByRole('button', { name: /back to characters/i });
+
+//   expect(button).toBeInTheDocument();
+// });
