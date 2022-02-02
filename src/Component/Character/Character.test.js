@@ -13,7 +13,6 @@ test('renders the character details', async () => {
   );
 
   const image = await screen.findByRole('img');
-  screen.debug();
   const header = await screen.findByText(/Jesse Pinkman/i);
   const name = screen.getByText(/Meth Dealer/i);
 

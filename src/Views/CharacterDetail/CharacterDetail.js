@@ -10,7 +10,6 @@ export default function CharacterDetail() {
   const [character, setCharacter] = useState([]);
   const [loading, setLoading] = useState(true);
   const history = useHistory();
-  console.log('id', id);
 
   useEffect(() => {
     const fetchData = async () => {
