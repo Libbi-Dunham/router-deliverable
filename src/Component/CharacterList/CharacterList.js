@@ -5,7 +5,7 @@ import '../../App.css';
 export default function CharacterList({ character }) {
   return (
     <div className="list">
-      <h1>Choose a Character</h1>
+      <h1>Choose A Character</h1>
       {character.map((char) => (
         <div className="char" key={char.char_id}>
           {char.character}

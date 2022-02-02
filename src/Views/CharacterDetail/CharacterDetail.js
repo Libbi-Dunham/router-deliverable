@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getCharacterById } from '../../services/character';
 import Character from '../../Component/Character/Character';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory } from 'react-router-dom';
 
 export default function CharacterDetail() {
   const { id } = useParams();
