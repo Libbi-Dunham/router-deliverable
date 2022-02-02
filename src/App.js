@@ -21,7 +21,7 @@ function App() {
     }
   }, [loading]);
 
-  if (loading) return <p> loading </p>;
+  if (loading) return <p> Loading </p>;
   return (
     <div className="App">
       <BrowserRouter>

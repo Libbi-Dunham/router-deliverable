@@ -8,10 +8,11 @@ export default function Character({ character, handleSubmit }) {
         <img src={character.img}></img>
         <h2> {character.nickname} </h2>
         <h2> {character.occupation} </h2>
+        <h2> {character.status} </h2>
       </div>
       <div>
         <button className="button" onClick={handleSubmit}>
-          Go Home
+          Back to Characters
         </button>
       </div>
     </>
