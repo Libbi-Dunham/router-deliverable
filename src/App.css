@@ -2,11 +2,6 @@ body {
   background-color: #d0f4de;
 }
 
-/* .list {
-  display: flex;
-  flex-wrap: wrap;
-} */
-
 .App {
   text-align: center;
   font-family: 'freemettoMedium';
@@ -26,6 +21,11 @@ button {
   font-family: 'freemettoMedium';
   font-weight: normal;
   font-style: normal;
+}
+
+.hover:hover {
+  width: 310px;
+  height: 310px;
 }
 
 .App-logo {

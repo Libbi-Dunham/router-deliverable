@@ -11,7 +11,7 @@ export default function CharacterList({ character }) {
           {char.character}
           <h2>{char.name}</h2>
           <Link key={char.char_id} to={`character/${char.char_id}`}>
-            <img alt={char.name} src={char.img}></img>
+            <img className="hover" alt={char.name} src={char.img}></img>
           </Link>
         </div>
       ))}
