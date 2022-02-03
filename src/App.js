@@ -19,7 +19,7 @@ function App() {
     {
       fetchData();
     }
-  }, [loading]);
+  }, []);
 
   if (loading) return <p> Loading </p>;
   return (
