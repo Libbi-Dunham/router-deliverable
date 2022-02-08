@@ -1,24 +1,11 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getCharacterById } from '../../services/character';
 import Character from '../../Component/Character/Character';
 import { useHistory } from 'react-router-dom';
+import useFetchCharacter from '../../hooks/CustomHooks';
 
 export default function CharacterDetail() {
-  const { id } = useParams();
-  const [character, setCharacter] = useState([]);
-  const [loading, setLoading] = useState(true);
   const history = useHistory();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const characterData = await getCharacterById(id);
-      setCharacter(characterData);
-      setLoading(false);
-    };
-    fetchData();
-  }, [id]);
+  const [loading, character] = useFetchCharacter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
