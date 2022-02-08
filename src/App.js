@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import CharacterList from './Component/CharacterList/CharacterList';
+import CharacterDetail from './Views/CharacterDetail/CharacterDetail';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { getCharacters } from './services/character';
 
 function App() {
+  const [character, setCharacter] = useState();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const charactersData = await getCharacters();
+
+      setCharacter(charactersData);
+      setLoading(false);
+    };
+    {
+      fetchData();
+    }
+  }, []);
+
+  if (loading) return <p> Loading </p>;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/character/:id">
+            <CharacterDetail />
+          </Route>
+          <Route exact path="/">
+            <CharacterList character={character} />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
